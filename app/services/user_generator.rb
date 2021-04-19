@@ -22,8 +22,8 @@ class UserGenerator
       #user.stripe_customer_id = generate_stripe_user(user.email)&.id
       #user.skip_confirmation_notification! 
       user.save!
-      #user.add_role :owner
-      #user.confirm
+      user.add_role :owner
+      user.confirm
      # user.delay.send_confirmation_instructions
       @user = user
       

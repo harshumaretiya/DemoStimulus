@@ -3,14 +3,15 @@ class Api::V1::RegistrationsController < Api::V1::AuthenticatedController
 
  # POST /user/sign_up
  def create
-		ug = UserGenerator.new
-	
-		begin
-			ug.generate!(user_params)
-		rescue UserGenerator::ParameterNotFound, UserGenerator::DuplicateError => e
-			render_exception(e, 422) && return
-    end
+	ug = UserGenerator.new
+
+	begin
+		ug.generate!(user_params)
+	rescue UserGenerator::ParameterNotFound, UserGenerator::DuplicateError => e
+		render_exception(e, 422) && return
 	end
+	json_response(UserValidateSerializer.new(ug.user).serializable_hash[:data][:attributes])
+end
 	
   private
 

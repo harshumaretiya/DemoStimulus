@@ -64,6 +64,19 @@ gem "stimulus_reflex", "~> 3.3"
 gem 'rack-cors'
 
 gem "font-awesome-rails"
-
+gem 'pry'
 # Admin panel
 gem 'activeadmin'
+
+# searialization
+gem 'fast_jsonapi'
+
+#secure header
+# gem 'secure_headers'
+
+# Role Based Authorization
+gem 'cancancan'
+gem 'rolify'
+
+#pagination
+gem 'will_paginate'
