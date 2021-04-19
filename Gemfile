@@ -65,5 +65,5 @@ gem 'rack-cors'
 
 gem "font-awesome-rails"
 
-#Admin panel
-#gem 'activeadmin'
+# Admin panel
+gem 'activeadmin'
